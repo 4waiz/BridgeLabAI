@@ -3,7 +3,7 @@ import Link from "next/link";
 import { cn } from "@/lib/cn";
 
 export function Logo({
-  size = 32,
+  size = 48,
   withWordmark = true,
   className,
   asLink = true,
@@ -13,30 +13,29 @@ export function Logo({
   className?: string;
   asLink?: boolean;
 }) {
+  const wordmarkHeight = Math.round(size * 0.62);
+  const wordmarkWidth = Math.round(wordmarkHeight * 4.5);
+
   const inner = (
-    <span className={cn("inline-flex items-center gap-2", className)}>
-      <span
-        className="relative inline-flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-50 to-white p-1 ring-1 ring-brand-100"
-        style={{ width: size + 8, height: size + 8 }}
-      >
-        <Image
-          src="/logo.png"
-          alt="BridgeLab AI logo"
-          width={size}
-          height={size}
-          priority
-          className="object-contain"
-        />
-      </span>
+    <span className={cn("inline-flex items-center gap-3", className)}>
+      <Image
+        src="/logo.png"
+        alt="BridgeLab AI logo"
+        width={size}
+        height={size}
+        priority
+        className="object-contain"
+      />
       {withWordmark && (
-        <span className="flex flex-col leading-none">
-          <span className="text-sm font-semibold tracking-tight text-slate-900">
-            BridgeLab AI
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.18em] text-brand-600">
-            Lab coach
-          </span>
-        </span>
+        <Image
+          src="/namelogo.png"
+          alt="BridgeLab AI"
+          width={wordmarkWidth}
+          height={wordmarkHeight}
+          priority
+          className="h-auto object-contain"
+          style={{ height: wordmarkHeight }}
+        />
       )}
     </span>
   );

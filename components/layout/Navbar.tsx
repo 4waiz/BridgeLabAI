@@ -21,8 +21,8 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200/70 bg-white/80 backdrop-blur">
-      <div className="container mx-auto flex h-16 items-center justify-between gap-4">
-        <Logo />
+      <div className="container mx-auto flex h-20 items-center justify-between gap-4">
+        <Logo size={52} />
         <nav className="hidden items-center gap-1 md:flex">
           {links.map((link) => {
             const active = pathname === link.href;
