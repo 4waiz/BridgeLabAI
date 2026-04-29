@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bg-ws" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <pattern id="dots-ws" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="rgba(148,163,184,0.18)"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-ws)"/>
+  <rect width="800" height="450" fill="url(#dots-ws)"/>
+  <g font-family="ui-sans-serif, system-ui" font-size="11" fill="#cbd5e1">
+    <text x="20" y="28">wrong-sensor-pin.demo</text>
+    <text x="700" y="28" text-anchor="end">BridgeLab AI</text>
+  </g>
+
+  <!-- Sensor module -->
+  <g>
+    <rect x="100" y="120" width="200" height="160" rx="14" fill="#1e3a8a" stroke="#3b82f6"/>
+    <rect x="120" y="140" width="160" height="80" rx="6" fill="#1d4ed8"/>
+    <text x="200" y="186" text-anchor="middle" fill="#dbeafe" font-family="ui-monospace" font-size="14" font-weight="700">DHT11</text>
+    <g fill="#fbbf24">
+      <circle cx="140" cy="252" r="5"/>
+      <circle cx="200" cy="252" r="5"/>
+      <circle cx="260" cy="252" r="5"/>
+    </g>
+    <text x="140" y="276" text-anchor="middle" fill="#fde68a" font-size="10">VCC</text>
+    <text x="200" y="276" text-anchor="middle" fill="#fde68a" font-size="10">DATA</text>
+    <text x="260" y="276" text-anchor="middle" fill="#fde68a" font-size="10">GND</text>
+  </g>
+
+  <!-- Arduino with pin labels -->
+  <g>
+    <rect x="500" y="100" width="220" height="280" rx="14" fill="#0e7490" stroke="#22d3ee" stroke-opacity="0.4"/>
+    <text x="610" y="130" text-anchor="middle" fill="#e0f2fe" font-family="ui-monospace" font-size="13" font-weight="700">ARDUINO UNO</text>
+
+    <!-- Digital pins -->
+    <g font-family="ui-monospace" font-size="11" fill="#cbd5e1">
+      <rect x="520" y="150" width="180" height="24" rx="4" fill="#0b3a52"/>
+      <text x="610" y="167" text-anchor="middle">DIGITAL  D2 D3 D4 D5</text>
+    </g>
+
+    <!-- Analog pins (highlighted because that's where DATA lands incorrectly) -->
+    <g font-family="ui-monospace" font-size="11" fill="#fde68a">
+      <rect x="520" y="200" width="180" height="24" rx="4" fill="#3f1d1d" stroke="#dc2626"/>
+      <text x="610" y="217" text-anchor="middle">ANALOG  A0 A1 A2 A3</text>
+    </g>
+
+    <g fill="#fbbf24">
+      <circle cx="540" cy="260" r="5"/>
+      <circle cx="540" cy="290" r="5"/>
+      <circle cx="540" cy="320" r="5"/>
+    </g>
+    <text x="555" y="263" fill="#fde68a" font-size="10">5V</text>
+    <text x="555" y="293" fill="#fde68a" font-size="10">A1</text>
+    <text x="555" y="323" fill="#fde68a" font-size="10">GND</text>
+  </g>
+
+  <!-- Wires -->
+  <path d="M 140 252 C 280 230, 420 240, 540 260" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <path d="M 200 252 C 300 280, 430 270, 540 290" stroke="#fbbf24" stroke-width="3" fill="none"/>
+  <path d="M 260 252 C 340 320, 440 320, 540 320" stroke="#94a3b8" stroke-width="3" fill="none"/>
+
+  <text x="400" y="420" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600">DHT11 DATA wired to analog pin A1 instead of a digital pin</text>
+</svg>
